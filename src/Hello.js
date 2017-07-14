@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css'
+import './Hello.css'
 
 const Hello = () => {
   return (
-    <div className="App">Hello React!</div>
+    <div className="Hello">Hello React!</div>
   );
 }
 
