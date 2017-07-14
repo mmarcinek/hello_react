@@ -8,16 +8,28 @@ class HelloList extends Component{
     super(props)
     this.state = {greetings: []}
     this.addGreeting = this.addGreeting.bind(this);
+    this.removeGreeting = this.removeGreeting.bind(this);
   }
 
   addGreeting(newName) {
     this.setState({ greetings: [...this.state.greetings, newName] });
   }
 
+  removeGreeting(removeName){
+    const filteredGreetings = this.state.greetings.filter(name => {
+      return name !== removeName;
+    });
+    this.setState({ greetings: filteredGreetings });
+  }
+
   renderGreetings(){
     return(
       this.state.greetings.map(name => (
-        <Hello key={name} name={name} />
+        <Hello 
+        key={name} 
+        name={name} 
+        removeGreeting = {this.removeGreeting}
+        />
       )
     ));
   }
