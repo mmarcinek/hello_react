@@ -1,9 +1,9 @@
 import React from 'react';
 import './Hello.css'
 
-const Hello = () => {
+const Hello = (props) => {
   return (
-    <div className="Hello">Hello React!</div>
+    <div className="Hello">Hello {props.name}</div>
   );
 }
 
